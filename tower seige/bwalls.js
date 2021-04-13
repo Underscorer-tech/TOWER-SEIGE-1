@@ -11,16 +11,16 @@ class bwalls{
     }
     this.width=width
     this.height=height;
-    
+    this.Visiblity=255
     this.body = Bodies.rectangle(x,y,width,height,options);
     World.add(world,this.body);
-    
+    console.log(this.body.speed)
     
     }
     
     display(){
     
-      if((this.body.speed)<0.28)
+      if((this.body.speed)<3)
       {
 
         var pos = this.body.position;
@@ -29,7 +29,7 @@ class bwalls{
         rectMode(CENTER)
         fill("blue")
         rect(0,0,this.width,this.height)
-        text(this.body.speed,200,300)
+      
         pop();
         
 
@@ -47,7 +47,7 @@ class bwalls{
       fill("blue")
       rect(0,0,this.width,this.height)
       pop();
-    
+    World.remove(world,this.body)
     var pos = this.body.position;
       }
     
